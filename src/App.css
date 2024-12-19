@@ -11,6 +11,10 @@ form {
     margin-left:  20px;
 }
 
+p {
+  width: 100px;
+}
+
 .taskList {
     display: flex;
     flex-direction: column;
@@ -18,21 +22,21 @@ form {
     padding-left: 30px;
   }
   
-  .task {
+.task {
     display: flex;
     justify-content: left;
     margin-bottom: 10px;
   }
   
-  .taskList h4 {
+.taskList h4 {
     text-align: left;
   }
 
-  ul {
+ul {
     list-style-type: none;
   }
   
-  .submit-btn{
+.submit-btn{
     background-color: blue;
     color: #FFF;
     border-radius: 5px;
@@ -40,7 +44,7 @@ form {
     margin-top: 10px;
     font-size: 20px;
     width: 150px;
-  }
+}
   
   form {
     flex-direction: column;
@@ -60,4 +64,16 @@ form {
     margin-left: 20px;
   }
   
+  .check {
+    width: 10px;
+  }
+
+  .list-item {
+    display: flex;
+    justify-content: space-around;
+  }
   
+  select {
+    width: 300px;
+    margin-top: 20px;
+  }
