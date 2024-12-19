@@ -1,0 +1,55 @@
+#root {
+    margin-left: 30px;
+}
+
+h1 {
+    padding-left: 30px;
+    background-color: lightgray;
+}
+
+form {
+    margin-left:  20px;
+}
+
+.taskList {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 30px;
+  }
+  
+  .task {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 10px;
+  }
+  
+  .taskList h4 {
+    text-align: left;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+  
+  button{
+    background-color: blue;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    font-size: 20px;
+    width: 150px;
+  }
+  
+  form {
+    flex-direction: column;
+    display: flex;
+  }
+  
+  input {
+    padding-left: 30px;
+    width: 300px;
+  }
+  
+  

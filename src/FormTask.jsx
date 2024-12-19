@@ -1,12 +1,32 @@
-import './FormTask.css'
+import React, { useState } from 'react';
 
-const FormTask = () =>{
-    return (<div className='formTask'>
-                <form id="inputForm">
-                    <input type="text" name="todo-name" id="todo-name" placeholder="Type a new todo"/>
-                    <input type="submit" value="Add Todo" id="submit-btn" />
-                </form>
-            </div>)
+
+const FormTask=({ addTodo }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim()) {
+      addTodo({
+        id: Date.now(), // Unique ID
+        name: inputValue,
+        done: false,
+      });
+      setInputValue(''); // Clear input
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Add a new todo"
+      />
+      <button type="submit">Add</button>
+    </form>
+  );
 }
- 
+
 export default FormTask;

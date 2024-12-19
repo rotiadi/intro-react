@@ -1,21 +1,22 @@
-import './TaskList.css'
+import React from 'react';
 
-const TasksList = () => {
-    return (
-        <div className="taskList">
-            <h4>Todos</h4>
-        
-            <div className="task">
-                <input type="checkbox" id="task1" name="task1" value="task1"/>
-                <label htmlFor="task1">Learn React</label>
-            </div>
-            <div className="task">
-                <input type="checkbox" id="task2" name="task2" value="task2"/>
-                <label htmlFor="task2">Be Awesome!</label>
-            </div>         
-        
-        </div>
-    );
+const  TaskList = ({ todos, handleCheck }) => {
+
+
+  return (
+    <ul>
+      {todos.map((todo) => (
+        <li key={todo.id}>
+          <input 
+          type="checkbox" 
+          id={todo.id}
+          name={todo.name} 
+          checked={todo.done}
+          onChange={() => handleCheck(todo.id)}/> {todo.name}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
-export default TasksList;
+export default TaskList;
