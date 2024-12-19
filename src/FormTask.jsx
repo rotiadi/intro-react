@@ -17,15 +17,18 @@ const FormTask=({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Add a new todo"
-      />
-      <button type="submit">Add</button>
-    </form>
+   
+        <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Add a new todo"
+        />
+        <button type="submit" className='submit-btn'>Add</button>
+        </form>
+       
+    
   );
 }
 

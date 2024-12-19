@@ -32,7 +32,7 @@ form {
     list-style-type: none;
   }
   
-  button{
+  .submit-btn{
     background-color: blue;
     color: #FFF;
     border-radius: 5px;
@@ -50,6 +50,14 @@ form {
   input {
     padding-left: 30px;
     width: 300px;
+  }
+
+  .delete-btn {
+    margin-left: 10px;
+  }
+
+  .delete-all-btn {
+    margin-left: 20px;
   }
   
   

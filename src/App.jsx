@@ -29,6 +29,18 @@ function App() {
     )
   }
 
+  const deleteTask = (id) => {
+    setTodos(todos.map(elem => {
+      return elem.id != id ? elem : null
+    }).filter(item => item !== null));
+  }
+
+  const deleteAllDoneTasks = () => {
+      setTodos(todos.map(elem => {
+        return !elem.done ? elem : null
+      }).filter(item => item !== null));
+  }
+
   // Save todos to localStorage
   useEffect(() => {
     window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
@@ -41,7 +53,7 @@ function App() {
     <div>
       <h1>Todo App</h1>
       <FormTask addTodo={addTodo} />
-      <TasksList todos={todos} handleCheck = {handleCheck} />
+      <TasksList todos={todos} handleCheck = {handleCheck} deleteTask = {deleteTask} deleteAllDoneTasks = {deleteAllDoneTasks} />
     </div>
   );
 }
