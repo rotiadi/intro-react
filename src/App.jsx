@@ -2,11 +2,15 @@ import React, { useState, useEffect } from 'react';
 import TasksList from './TasksList';
 import FormTask from './FormTask';
 import './App.css';
+import { use } from 'react';
 
 const LSKEY = "MyTodoApp";
 
+
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const myData = JSON.parse(window.localStorage.getItem(LSKEY+".todos"))
+  const [todos, setTodos] = useState(myData);
 
   const addTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
@@ -28,7 +32,10 @@ function App() {
   // Save todos to localStorage
   useEffect(() => {
     window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
+    var data=JSON.parse(localStorage.getItem("variable_name"));
   }, [todos]);
+
+ 
 
   return (
     <div>
