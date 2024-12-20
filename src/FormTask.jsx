@@ -23,23 +23,24 @@ const FormTask=({ addTodo }) => {
   }
 
   return (
-   
-        <form onSubmit={handleSubmit}>
+   <>
+        <form onSubmit={handleSubmit} className='mb-5'>
         <input
+        className='form-control mb-2 w3-xxlarge'
             type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Add a new todo"
         />
-        <select name="category" id="category" value={selectedCategory} onChange={handleChangeCategory}>
+        <select name="category" id="category"  className='form-select form-select-lg mb-2' value={selectedCategory} onChange={handleChangeCategory}>
             <option value={'Personal'}> Personal</option>
             <option value={'Work'}> Work</option>
 
         </select>
-        <button type="submit" className='submit-btn'>Add</button>
+        <button type="submit" className='w3-button w3-round w3-green w3-hover-black w3-large'>Add</button>
         </form>
        
-    
+   </>
   );
 }
 

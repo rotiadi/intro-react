@@ -1,7 +1,5 @@
-import './HeaderTask.jsx'
-
 const HeaderTask = () => {
-    return <h1>My Todo App</h1>
+    return <p className="display-1 text-center mb-5">My Todo App</p>
 }
 
 export default HeaderTask;

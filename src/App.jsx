@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import TasksList from './TasksList';
 import FormTask from './FormTask';
+import HeaderTask from './HeaderTask';
+
 import './App.css';
+
 
 const LSKEY = "MyTodoApp";
 
@@ -41,12 +44,6 @@ function App() {
       }).filter(item => item !== null));
   }
 
-/*   const filterTask = (nameColumn, searchText) => {
-   
-    setfilteredData(todos.filter(todo => todo[nameColumn].toLowerCase().includes(searchText.toLowerCase())))
-    setFilter(searchText) 
-  } */
-
   // Save todos to localStorage
   useEffect(() => {
     window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
@@ -58,8 +55,8 @@ function App() {
 
   return (
     <div>
-      <h1>Todo App</h1>
-      <FormTask addTodo={addTodo} />
+      <HeaderTask />
+      <FormTask addTodo={addTodo}  />
       <TasksList todos={todos} handleCheck = {handleCheck} deleteTask = {deleteTask} deleteAllDoneTasks = {deleteAllDoneTasks}  />
     </div>
   );
