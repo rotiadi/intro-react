@@ -77,3 +77,43 @@ ul {
     width: 300px;
     margin-top: 20px;
   }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .checkBox-col{
+    width: 50px;
+    text-align: center;
+  }
+
+  .button-col {
+    width: 100px;
+    text-align: center;
+  }
+
+  .header-table {
+    text-align: center;
+  }
+
+  .input-serch-header{
+    padding: 0;
+  }
+
+  .input-serch-header input {
+    padding: 1px;
+    width: 100%;
+    height: 100%;
+  }

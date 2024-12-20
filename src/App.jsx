@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react';
 import TasksList from './TasksList';
 import FormTask from './FormTask';
 import './App.css';
-import { use } from 'react';
 
 const LSKEY = "MyTodoApp";
 
 
-
 function App() {
   const myData = JSON.parse(window.localStorage.getItem(LSKEY+".todos"))
-  const [todos, setTodos] = useState(myData);
+  const [todos, setTodos] = useState(myData ?? []);
 
   const addTodo = (newTodo) => {
     setTodos([...todos, newTodo]);
@@ -26,7 +24,9 @@ function App() {
         }
         return todo }
       )
-    )
+    )    
+
+    
   }
 
   const deleteTask = (id) => {
@@ -41,10 +41,17 @@ function App() {
       }).filter(item => item !== null));
   }
 
+/*   const filterTask = (nameColumn, searchText) => {
+   
+    setfilteredData(todos.filter(todo => todo[nameColumn].toLowerCase().includes(searchText.toLowerCase())))
+    setFilter(searchText) 
+  } */
+
   // Save todos to localStorage
   useEffect(() => {
     window.localStorage.setItem(LSKEY + ".todos", JSON.stringify(todos));
     var data=JSON.parse(localStorage.getItem("variable_name"));
+
   }, [todos]);
 
  
@@ -53,7 +60,7 @@ function App() {
     <div>
       <h1>Todo App</h1>
       <FormTask addTodo={addTodo} />
-      <TasksList todos={todos} handleCheck = {handleCheck} deleteTask = {deleteTask} deleteAllDoneTasks = {deleteAllDoneTasks} />
+      <TasksList todos={todos} handleCheck = {handleCheck} deleteTask = {deleteTask} deleteAllDoneTasks = {deleteAllDoneTasks}  />
     </div>
   );
 }
